@@ -280,7 +280,7 @@ def save_estimations(file_struct, times, labels, boundaries_id, labels_id,
     sandbox["boundaries_id"] = boundaries_id
     sandbox["labels_id"] = labels_id
     sandbox["timestamp"] = \
-        datetime.datetime.today().strftime("%Y/%m/%d %H:%M:%S")
+        datetime.datetime.now(tz=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}})
     for key in params:
         sandbox[key] = params[key]
     ann.sandbox = sandbox
